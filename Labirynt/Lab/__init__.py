@@ -35,25 +35,21 @@ class Labirynt:
         if self.lines[cord[0]][cord[1]] == '$':
             return True
        
-        if self.lines[cord[0]+1][cord[1]] == ' ':
+        if (self.lines[cord[0]+1][cord[1]] == ' ')
+        or (self.lines[cord[0]+1][cord[1]] == '$'):
             self.findend([cord[0]+1, cord[1]])
-        elif self.lines[cord[0]+1][cord[1]] == '#':
-            return
             
-        if self.lines[cord[0]-1][cord[1]] == ' ':
-            self.findend([cord[0]-1, cord[1]])
-        elif self.lines[cord[0]-1][cord[1]] == '#':
-            return
+        if (self.lines[cord[0]-1][cord[1]] == ' ')
+        or (self.lines[cord[0]-1][cord[1]] == '$'):
+            self.findend([cord[0]-1, cord[1]]))
         
-        if self.lines[cord[0]][cord[1]+1] == ' ':
-            self.findend([cord[0], (cord[1]+1)])
-        elif self.lines[cord[0]][cord[1]+1] == '#':
-            return   
+        if (self.lines[cord[0]][cord[1]+1] == ' ')    
+        or (self.lines[cord[0]][cord[1]+1] == '$'):
+            self.findend([cord[0], (cord[1]+1)]) 
         
-        if self.lines[cord[0]][cord[1]-1] == ' ':
-            self.findend([cord[0], (cord[1]-1)])
-        elif self.lines[cord[0]][cord[1]-1] == ' ':
-            return
+        if (self.lines[cord[0]][cord[1]-1] == ' ')
+        or (self.lines[cord[0]][cord[1]-1] == '$'):
+           self.findend([cord[0], (cord[1]-1)])
             
 
             
